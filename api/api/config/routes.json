@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/releases",
+      "handler": "api.findReleases",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/show/artist/:id",
+      "handler": "api.showArtist",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/show/master/:id",
+      "handler": "api.showMaster",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/show/artist/:id/releases",
+      "handler": "api.showArtistReleases",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/show/release/:id",
+      "handler": "api.showAlbum",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
