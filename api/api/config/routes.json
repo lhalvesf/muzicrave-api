@@ -39,6 +39,30 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/contact",
+      "handler": "api.contact",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/colaboratte",
+      "handler": "api.colaboratte",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/newsletter",
+      "handler": "api.newsletter",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

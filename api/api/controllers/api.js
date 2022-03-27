@@ -82,4 +82,75 @@ module.exports = {
 
     return data
   },
+
+
+
+
+  async contact(ctx) {
+    /*
+    | Send email
+    */
+    const { name, email, message } = ctx.request.body
+
+    const sendTo = 'lh.alvesf@gmail.com'
+    strapi.log.debug(`Trying to send an email to ${sendTo}`)
+
+    try {
+      const emailOptions = {
+        to: sendTo,
+        subject: `Contato Muzicrave`,
+        html: `
+          <p>Nome: ${name}</p>\n
+          <p>E-mail: ${email}</p>\n
+          <p>Mensagem: ${message}</p>`,
+        replyTo: email,
+        text: message,
+      }
+      await strapi.plugins['email'].services.email.send(emailOptions)
+      strapi.log.debug(`Email sent to ${sendTo}`)
+      ctx.send({ message: 'Email sent' })
+    } catch (err) {
+      strapi.log.error(`Error sending email to ${sendTo}`, err)
+      ctx.send({ error: 'Error sending email' })
+    }
+  },
+
+
+  async colaboratte(ctx) {
+   /*
+    | Send email
+    */
+    const { name, email, message } = ctx.request.body
+
+    const sendTo = 'lh.alvesf@gmail.com'
+    strapi.log.debug(`Trying to send an email to ${sendTo}`)
+
+    try {
+      const emailOptions = {
+        to: sendTo,
+        subject: `Contato Muzicrave [COLABORE]`,
+        html: `
+          <p>Nome: ${name}</p>\n
+          <p>E-mail: ${email}</p>\n
+          <p>Mensagem: ${message}</p>`,
+        replyTo: email,
+        text: message,
+      }
+      await strapi.plugins['email'].services.email.send(emailOptions)
+      strapi.log.debug(`Email sent to ${sendTo}`)
+      ctx.send({ message: 'Email sent' })
+    } catch (err) {
+      strapi.log.error(`Error sending email to ${sendTo}`, err)
+      ctx.send({ error: 'Error sending email' })
+    }
+  },
+
+  async newsletter(ctx) {
+    /*
+    | Receive a query and and return related artists
+    */
+    const { query } = ctx.request.body
+    console.log(query)
+  },
+
 };
