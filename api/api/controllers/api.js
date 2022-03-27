@@ -76,7 +76,7 @@ module.exports = {
     */
     const { id } = ctx.params
     let { data } = await axios
-      .get(`https://api.discogs.com/releases/${id}?token=XNpUINGKchTmtYBPPSVVULzcCAUjklDgTyzIqqZw`)
+      .get(`https://api.discogs.com/masters/${id}?token=XNpUINGKchTmtYBPPSVVULzcCAUjklDgTyzIqqZw`)
       .then(res => {return res})
       .catch(err => {return err});
 
