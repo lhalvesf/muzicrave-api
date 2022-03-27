@@ -16,7 +16,7 @@ module.exports = {
     console.log(query)
 
     let { data } = await axios
-      .get(`https://api.discogs.com/database/search?q=${query?query:''}&per_page=10&country=brazil&token=XNpUINGKchTmtYBPPSVVULzcCAUjklDgTyzIqqZw`)
+      .get(`https://api.discogs.com/database/search?q=${query?query:''}&per_page=1000&country=brazil&token=XNpUINGKchTmtYBPPSVVULzcCAUjklDgTyzIqqZw`)
       .then(res => {return res})
       .catch(err => {return err});
 
