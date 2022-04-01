@@ -13,10 +13,9 @@ module.exports = {
     | Receive a query and and return related artists
     */
     const { query } = ctx.request.body
-    console.log(query)
 
     let { data } = await axios
-      .get(`https://api.discogs.com/database/search?q=${query?query:''}&per_page=1000&country=brazil&token=XNpUINGKchTmtYBPPSVVULzcCAUjklDgTyzIqqZw`)
+      .get(`https://api.discogs.com/database/search?token=XNpUINGKchTmtYBPPSVVULzcCAUjklDgTyzIqqZw`, { params: query })
       .then(res => {return res})
       .catch(err => {return err});
 
@@ -82,9 +81,6 @@ module.exports = {
 
     return data
   },
-
-
-
 
   async contact(ctx) {
     /*
