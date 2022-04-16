@@ -48,6 +48,10 @@
     "author": {
       "via": "articles",
       "model": "writer"
+    },
+    "subtitle": {
+      "type": "text",
+      "required": true
     }
   }
 }

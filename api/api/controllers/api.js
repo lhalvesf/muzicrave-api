@@ -69,7 +69,7 @@ module.exports = {
     return data
   },
 
-  async showAlbum(ctx) {
+  async showMaster(ctx) {
     /*
     | Receive a query and and return related artists
     */
@@ -81,6 +81,21 @@ module.exports = {
 
     return data
   },
+
+
+  async showRelease(ctx) {
+    /*
+    | Receive a query and and return related artists
+    */
+    const { id } = ctx.params
+    let { data } = await axios
+      .get(`https://api.discogs.com/releases/${id}?token=XNpUINGKchTmtYBPPSVVULzcCAUjklDgTyzIqqZw`)
+      .then(res => {return res})
+      .catch(err => {return err});
+
+    return data
+  },
+
 
   async contact(ctx) {
     /*

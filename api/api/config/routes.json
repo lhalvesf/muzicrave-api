@@ -34,8 +34,16 @@
     },
     {
       "method": "GET",
+      "path": "/show/master/:id",
+      "handler": "api.showMaster",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/show/release/:id",
-      "handler": "api.showAlbum",
+      "handler": "api.showRelease",
       "config": {
         "policies": []
       }
