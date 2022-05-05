@@ -59,10 +59,11 @@ module.exports = {
     | Receive a query and and return related artist release
     */
     const { id } = ctx.params
+    const q = ctx.request.url.split('/')[ctx.request.url.split('/').length - 1]
 
     // artists/{artist_id}/releases{?sort,sort_order}
     let { data } = await axios
-      .get(`https://api.discogs.com/artists/${id}/releases?token=XNpUINGKchTmtYBPPSVVULzcCAUjklDgTyzIqqZw`)
+      .get(`https://api.discogs.com/artists/${id}/${q}&token=XNpUINGKchTmtYBPPSVVULzcCAUjklDgTyzIqqZw`)
       .then(res => {return res})
       .catch(err => {return err});
 
